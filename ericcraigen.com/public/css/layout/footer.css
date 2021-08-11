@@ -1,0 +1,40 @@
+:root {
+    --footer-bg-color: linear-gradient(to top, #29323c 0%, #485563 100%);
+    --color-dark: #404139 !important;
+    --color-light: #F5F5F5 !important;
+    --color-hover: #9acd32 !important;
+    --text-shadow-light: -2px 2px 1px black;
+    --text-shadow-dark: -2px 2px 1px white;
+    --web-kit-sidebox-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
+    --side-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
+}
+
+footer {
+    background: var(--footer-bg-color);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    -webkit-box-shadow: var(--web-kit-sidebox-shadow);
+    box-shadow: var(--side-box-shadow);
+
+}
+
+.btn-outline-light {
+    -webkit-box-shadow: -5px 0px 13px -7px #000000, 5px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
+    box-shadow: -5px 0px 13px -7px #000000, 5px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--color-hover) !important;
+    border-color: var(--color-hover) !important;
+    transform: scale(1.1);
+}
+
+.copy-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    color: var(--color-light);
+
+}

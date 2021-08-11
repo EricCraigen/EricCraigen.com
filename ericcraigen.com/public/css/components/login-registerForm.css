@@ -1,0 +1,65 @@
+:root {
+    --navbar-bg-color: linear-gradient(to bottom, #29323c 0%, #485563 100%);
+    --component-bg-image: linear-gradient(310deg, #29323c 0%, #485563 100%);
+    --color-dark: #404139 !important;
+    --color-light: #F5F5F5 !important;
+    --color-hover: #9acd32 !important;
+    --text-shadow-light: -2px 2px 1px black;
+    --text-shadow-dark: -2px 2px 1px white;
+    --web-kit-sidebox-shadow: inset 0 0 10px rgb(247, 240, 240), -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    --side-box-shadow: inset 0 0 10px rgb(247, 240, 240), -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.auth-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-image: var(--component-bg-image);
+    border: 1px solid black;
+    -webkit-box-shadow: var(--web-kit-sidebox-shadow);
+    box-shadow: var(--side-box-shadow);
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 475px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-image: var(--component-bg-image);
+    border: 1px solid black;
+    -webkit-box-shadow: var(--web-kit-sidebox-shadow);
+    box-shadow: var(--side-box-shadow);
+}
+
+.registration-input {
+    width: 96%;
+}
+
+.registration-link {
+    color: var(--color-light);
+}
+
+.registration-link:hover {
+    color: var(--color-hover);
+}
+
+
+.input--wrapper {
+    width: 100%;
+    position: relative;
+}

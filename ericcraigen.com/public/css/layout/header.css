@@ -1,0 +1,118 @@
+:root {
+    --navbar-bg-color: linear-gradient(to bottom, #29323c 0%, #485563 100%);
+    --color-dark: #404139 !important;
+    --color-light: #F5F5F5 !important;
+    --color-hover: #9acd32 !important;
+    --text-shadow-light: -2px 2px 1px black;
+    --text-shadow-dark: -2px 2px 1px white;
+    --web-kit-sidebox-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
+    --side-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: var(--navbar-bg-color);
+    margin: 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
+    -webkit-box-shadow: var(--web-kit-sidebox-shadow);
+    box-shadow: var(--side-box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.navbar--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-brand {
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: 1.75rem;
+    text-shadow: var(--text-shadow-light);
+}
+
+.navbar-toggler {
+    border-color: #F5F5F5;
+}
+
+.navbar-toggler:hover {
+    border-color: #9acd32;
+}
+
+.fa-bars {
+    color: var(--color-light);
+}
+
+#navbarNav {
+    width: 100%;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+.navbar-nav {
+    margin-right: 1rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    text-shadow: var(--text-shadow-light);
+}
+
+.nav-link.active {
+    color: var(--color-hover);
+}
+
+.social-links > a {
+    font-size: 2.5rem;
+    text-shadow: var(--text-shadow-light);
+}
+
+.nav-link:hover, .social-links > a > i:hover {
+    color: var(--color-hover) !important;
+    transform: scale(1.1);
+}
+
+.nav-link:hover > svg, .nav-link:hover > div > svg {
+    fill: var(--color-hover) !important;
+    transform: scale(1.1);
+}
+
+.navbar-brand:hover {
+    color: var(--color-hover) !important;
+}
+
+.logged-in-dropdown {
+    display: flex;
+    background: none !important;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around; 
+}
+
+@media (min-width: 991px) {
+
+    .nav-links-container {
+        margin-top: 0rem;
+        justify-content: flex-end;
+    }
+
+    .social-links {
+        display: none;
+    }
+
+}

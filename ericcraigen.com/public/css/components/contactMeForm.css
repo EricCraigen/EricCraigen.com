@@ -1,0 +1,21 @@
+.contact-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-image: var(--component-bg-image);
+    border: 1px solid black;
+    -webkit-box-shadow: var(--web-kit-sidebox-shadow);
+    box-shadow: var(--side-box-shadow);
+}
