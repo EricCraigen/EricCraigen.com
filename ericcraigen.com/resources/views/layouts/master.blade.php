@@ -11,6 +11,8 @@
         @endisset
     </title>
 
+    <link rel="icon" href="/img/ericcraigen-com-favico.png" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -149,9 +151,9 @@
         let windowScrollPos = $(document).scrollTop();
         let mainContainerScrolPos = $('#mainContainer').scrollTop();
         let scrollDownIndicatorLocationOnLoad = mainContainerHeight - viewportHeight + windowScrollPos;
+        let docLoaded = $('.navbar').data('doc-loaded');
 
         $('#mainScrollDownIndicator1').css('bottom', mainContainerHeight);
-
 
         $(function() {
 
@@ -201,6 +203,15 @@
             $('.main-scroll-down').on('click', function() {
                 let bodyHeight = $('body').outerHeight();
                 $('body, html').scrollTop(bodyHeight);
+            });
+
+        });
+
+
+        $(function() {
+
+            $('.navbar-brand').on('mouseover', function() {
+
             });
 
         });

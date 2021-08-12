@@ -675,6 +675,7 @@
     padding-top: 0.75rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
+    white-space: nowrap;
 }
 
 .project-github-repo-lower {

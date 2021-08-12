@@ -5,7 +5,9 @@ $currentRoute = Route::currentRouteName();
 <nav class="navbar navbar-expand-lg">
 
     <div class="navbar--wrapper">
-        <a class="navbar-brand" href="/">Eric Craigen</a>
+        <a class="navbar-brand gelatine" href="/" id="navbar-brand">
+            <img class="nav-brand-logo" src="/img/ericcraigen-com-favico.png" alt="Nav Brand Logo">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>

@@ -16,8 +16,8 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('cardIndex');
             $table->boolean('featuredProject');
-            $table->string('featuredProjectFrontDescriptionString', 300)->nullable();
-            $table->string('featuredProjectBackDescriptionString', 300)->nullable();
+            $table->string('featuredProjectFrontDescriptionString', 1500)->nullable();
+            $table->string('featuredProjectBackDescriptionString', 1500)->nullable();
             $table->string('projectName', 100)->nullable();
             $table->string('minifiedBackgroundImage', 150)->nullable();
             $table->string('projectURL', 150)->nullable();
@@ -34,7 +34,7 @@ class CreateProjectsTable extends Migration
             $table->string('gitHubRepoURLString', 1500)->nullable();
             $table->string('contributorsLinkString', 1500)->nullable();
             $table->string('contributionsString', 1000)->nullable();
-            $table->string('projectDescriptionString', 5000)->nullable();
+            $table->text('projectDescriptionString', 5000)->nullable();
         });
     }
 

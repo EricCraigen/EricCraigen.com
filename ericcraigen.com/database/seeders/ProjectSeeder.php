@@ -18,9 +18,8 @@ class ProjectSeeder extends Seeder
         $project = new Project([
             'cardIndex' => '1',
             'featuredProject' => true,
-            'featuredProjectFrontDescriptionString' => 'Is a collaborative full stack Laravel v5.8.35 web application. It serves a multitude of functions for customers and employees alike.',
-            'featuredProjectBackDescriptionString' => 'This is the description for the back of the card! It will be a bit longer then the front but not quite as long as the paragraphs 
-                                                       inside of the actual project cards on the projects page!',
+            'featuredProjectFrontDescriptionString' => 'A collaborative full stack Laravel 5 web application that serves a multitude of functions for customers and employees alike.',
+            'featuredProjectBackDescriptionString' => 'RecycleTechs is very much intended to be modeled as Software as a Service. Offering not only a store front and online presence for a hypothetical company, it was developed with employees in mind. Employees can complete a multitude of funcitions to aid in completing daily functions, as well as collecting performance metrics on items such as sales.',
             'projectName' => 'RecycleTechs',
             'minifiedBackgroundImage' => '/img/project-expand-background/recycleTechs-project-expand-background.jpeg',
             'projectURL' => 'https://www.recycletechs.ericcraigen.com',
@@ -55,9 +54,10 @@ class ProjectSeeder extends Seeder
         $project = new Project([
             'cardIndex' => '2',
             'featuredProject' => true,
-            'featuredProjectFrontDescriptionString' => 'Is a collaborative full stack Laravel v5.8.35 web application. It serves a multitude of functions for customers and employees alike.',
-            'featuredProjectBackDescriptionString' => 'This is the description for the back of the card! It will be a bit longer then the front but not quite as long as the paragraphs 
-                                                       inside of the actual project cards on the projects page!',
+            'featuredProjectFrontDescriptionString' => '<a class="contact-link gelatine" href="https://www.plankcooking.com">Plankcooking</a> is a website that I have re-engineered from scratch in five separate technologies.',
+            'featuredProjectBackDescriptionString' => 'Plankcooking served as the final project for many of my courses while becoming a developer. I have come to know his version of the site inside and out while not only learning 
+                                                       how to produce efficient applications with the courses given technology, but also teaching myself how to incorporate and utilize other frameworks and libraries such as 
+                                                       Bootstrap &amp; jQuery.',
             'projectName' => 'Plankcooking',
             'minifiedBackgroundImage' => '/img/project-expand-background/plankcooking-project-expand-background.jpeg',
             'projectURL' => 'https://www.plankcooking.ericcraigen.com',
@@ -108,9 +108,9 @@ class ProjectSeeder extends Seeder
         $project = new Project([
             'cardIndex' => '3',
             'featuredProject' => true,
-            'featuredProjectFrontDescriptionString' => 'Is a collaborative full stack Laravel v5.8.35 web application. It serves a multitude of functions for customers and employees alike.',
-            'featuredProjectBackDescriptionString' => 'This is the description for the back of the card! It will be a bit longer then the front but not quite as long as the paragraphs 
-                                                       inside of the actual project cards on the projects page!',
+            'featuredProjectFrontDescriptionString' => 'My Android mobile applications developed with Kotlin. These applications represent my journey in learning how to develop full stack Android apps.',
+            'featuredProjectBackDescriptionString' => 'From a simple single button game called Time Fighter to an API movie database application, I have developed five separate mobile applications using Kotlin.
+                                                       Two of these applications not only demonstrate CRUD operations, but does so with the power of the Volley library in order to communicate with a microservice.',
             'projectName' => 'Mobile Apps',
             'minifiedBackgroundImage' => '/img/project-expand-background/mobile-apps-project-expand-background.jpeg',
             'gitHubRepoURL' => 'https://github.com/EricCraigen/Mobile-Applications',
@@ -121,22 +121,32 @@ class ProjectSeeder extends Seeder
             'projectGIF' => '/img/project-gifs/CRUDAPI.gif*/img/project-gifs/OMDBApi.gif',
             'projectGIFAlt' => 'CRUD API Gif #1*OMBD API Gif #1',
             'contributorsNameString' => 'Me',
-            'subProjectsNameString1' => 'Mobile Dev I Course Assignments,Dice Roller,Time Fighter,PIG Dice Rolling Game (v1),PIG DRG (Localization),PIG DRG (Save State)',
+            'subProjectsNameString1' => 'Mobile Dev I Course Assignments,Dice Roller,Time Fighter,PIG Dice Rolling Game,PIG DRG (Localization),PIG DRG (Save State)',
             'subProjectsNameString2' => 'Mobile Dev II Course Assignments,PIG Dice Rolling Game,Where are my spare parts? (CRUD),Where are my spare parts? (API Integration),Open Movie Database Final Project',
             'gitHubRepoURLString' => 'https://github.com/EricCraigen/Mobile-Applications',
-            'contributionsString' => 'Frontend Development,Backend Development,Eloquent (Object Relational Mapping),Database Management,Hosting',
-            'projectDescriptionString' => 'Please pardon my dust...
-                                           *
-                                           *Project Descriptions are inbound!',
+            'contributionsString' => 'Development',
+            'projectDescriptionString' => 'After spending over a year creating Kotlin console applications, my journey to developing Android applications began with a <a class="contact-link gelatine" href="https://www.raywenderlich.com/4936497-your-first-kotlin-android-app/">tutorial</a>
+                                           that covered all of the basic tools needed to develop a simple, one layout application. This application is called Time Fighter and has a simple button, timer, and scoreboard that allows the user
+                                           to compete against the clock to see how many times the button can be depressed within 60 seconds.
+                                           *PIG Dice Rolling Game (PDRG) is a just that! A two dice rolling game where the user competes with the computer in an attempt to reach the winning score first. If you would like to be a little piggy
+                                           and try to win without ever letting the cpu take a turn, you may! But look out! If you come up with a one, you\'ve lost your score AND score turn. Roll double ones and you\'ll not only lose your turn score,
+                                           but say goodbye to your over all score as well.
+                                           *There are 4 versions of PDRG, each containing a separate aspect of functionality to show how the application progressed through out my experience in learning Android development. There is a version where 
+                                           localization was implemented in order to support Spanish speaking users. 
+                                           *Another version saves the applications state on screen rotation in order to maintain the applications state after it has destroyed and rebuilt itself 
+                                           in the new oreientation layout. The final version contained all the afforementioned features as well as a newly designed leaderboard that utilizes the devices storages to save users win/loss records against the computer.
+                                           *Where are my spare parts? is an application that was developed to demonstrate CRUD operations in an Android environmet. The basic CRUD version utilizes the devices storage to maintain user records of spare parts and their locations.
+                                           The API version functions the same, however instead of saving the database records in CSV format on the device, they are actually interacted with via Kotlin\'s volley library to a microservice API.
+                                           *The final project of Mobile Dev II is a movie database that allows a user to search for and view information about all movies contained within the Open Movie Database. Search results are displayed in a recylcer view that allows the user
+                                           to scroll through and click on their desired result to show more detailed information about the movie in a single movie layout. ',
         ]);
         $project->save();
 
         $project = new Project([
             'cardIndex' => '4',
             'featuredProject' => false,
-            'featuredProjectFrontDescriptionString' => 'Is a collaborative full stack Laravel v5.8.35 web application. It serves a multitude of functions for customers and employees alike.',
-            'featuredProjectBackDescriptionString' => 'This is the description for the back of the card! It will be a bit longer then the front but not quite as long as the paragraphs 
-                                                       inside of the actual project cards on the projects page!',
+            'featuredProjectFrontDescriptionString' => null,
+            'featuredProjectBackDescriptionString' => null,
             'projectName' => 'Console Apps',
             'minifiedBackgroundImage' => '/img/project-expand-background/console-apps-project-expand-background.jpeg',
             'gitHubRepoURL' => 'https://github.com/EricCraigen/Console-Applications',
@@ -147,22 +157,33 @@ class ProjectSeeder extends Seeder
             'projectGIF' => '/img/project-gifs/PuzzleTDD.gif',
             'projectGIFAlt' => 'PuzzleTDD Gif #1',
             'contributorsNameString' => 'Me',
-            'subProjectsNameString1' => 'Programming Principles I Course Assignments,Acronym,Center String,Coins,Hash Maps,Histogram,Leap Years Calculator,Payroll Calculator,Reverse Digit,Rock Paper Scissors,Triangle,Course Header',
+            'subProjectsNameString1' => 'Programming Principles I Course Assignments,Acronym,Center String,Coins,Hash Maps,Histogram,Leap Years Calculator,Payroll Calculator,Reverse Digit,Rock Paper Scissors,Triangle,Course Header,Connect Four Final Project',
             'subProjectsNameString2' => 'Programming Principles II Course Assignments,Book Main,Character Fight,Check Writer,RegEx Text Search,Various Classes,Word Search Final Project',
             'gitHubRepoURLString' => 'https://github.com/EricCraigen/Console-Applications',
-            'contributionsString' => 'Frontend Development,Backend Development,Eloquent (Object Relational Mapping),Database Management,Hosting',
-            'projectDescriptionString' => 'Please pardon my dust...
-                                           *
-                                           *Project Descriptions are inbound!',
+            'contributionsString' => 'Development',
+            'projectDescriptionString' => 'Before the mobile applications could be started, my journey to learning Kotlin began right along side full stack web development with console application. Many of these applications are fairly basic, but provide 
+                                           real world examples of programs that are ready to plugin to an Android application. Some of my more simple programs allow users to convert sentences into an acronymns or to put in a number of coins and be told the 
+                                           vaule of the entered coins.
+                                           *My first menu driven application was Rock Paper Scissors. This was really my first deep dive into the world of Object Oriented Programming and was one of the mentally challenging tasks I had ever come against in my 
+                                           life. I can not begin to describe the feeling I had when I was able to finally make it all work as intended and this is really where software develpment took a grip of me so tight that I will never be able to free myself
+                                           from its grasp.
+                                           *This grasp never felt more suffocating than during the final project in which we were tasked with creating a menu driven Connect Four game. This project required me to utilize a multi-dimensional array to act as a
+                                           gameboard that would house the blank and player spaces of the board. 
+                                           *"Array index out of bounds" was the error that I was seeing and despite my days of searching I never did figure out how to defeat this major bug before
+                                           mid-night cut off. While I was able to test for wins horizontally and vertically, however when testing in the diagonal direction I just could not comprehend how I needed to test the value that will be used next, vice testing
+                                           it when it was actually being tested, thus throwing the index "out of bounds".
+                                           *Fast forward the the Programming Principles II final project in which we were tasked with building an application that would take in a txt file containing words in CSV and display these words on a 45x45 space board. 
+                                           This program was very similar to the previous final in that it had a mulit-dimensional array to traverse in every direction at some point during the logic. 
+                                           *Having gained an abundance of knowledge and experience on how to
+                                           properly achieve this, I was finally able to comprehend the concept of testing BEFORE testing and make it work perfectly.',
         ]);
         $project->save();
 
         $project = new Project([
             'cardIndex' => '5',
             'featuredProject' => false,
-            'featuredProjectFrontDescriptionString' => 'Is a collaborative full stack Laravel v5.8.35 web application. It serves a multitude of functions for customers and employees alike.',
-            'featuredProjectBackDescriptionString' => 'This is the description for the back of the card! It will be a bit longer then the front but not quite as long as the paragraphs 
-                                                       inside of the actual project cards on the projects page!',
+            'featuredProjectFrontDescriptionString' => null,
+            'featuredProjectBackDescriptionString' => null,
             'projectName' => 'Game Dev',
             'minifiedBackgroundImage' => '/img/project-expand-background/game-dev-project-expand-background.jpeg',
             'gitHubRepoURL' => 'https://github.com/EricCraigen/Mobile-Applications',
@@ -177,7 +198,9 @@ class ProjectSeeder extends Seeder
             'contributionsString' => 'Frontend Development,Backend Development,Eloquent (Object Relational Mapping),Database Management,Hosting',
             'projectDescriptionString' => 'Please pardon my dust...
                                            *
-                                           *Project Descriptions are inbound!',
+                                           *As I have only just begun my journey into web-based game development!
+                                           *My overall goal is to create a classic RPG, top down style game from pure HTML/CSS/JavaScript. 
+                                           *Projects will be posted here as I procede through my quest to build an exciting RPG title.',
         ]);
         $project->save();
 
