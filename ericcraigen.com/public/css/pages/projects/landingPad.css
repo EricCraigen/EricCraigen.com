@@ -57,6 +57,10 @@
 }
 
 @media screen and (max-width: 1099px) {
+    .project-mac-wrapper {
+        transform: scale(0.89);
+    }
+
     .bounce-in-top {
         animation: bounce-in-top 3.5s ease;
     }
@@ -149,6 +153,10 @@
 }
 
 @media screen and (min-width: 1100px) {
+    .project-mac-wrapper {
+        transform: scale(1.1);
+    }
+
     .bounce-in-top {
         animation: bounce-in-top 3.5s ease;
     }
@@ -516,6 +524,7 @@
     align-items: flex-start;
     min-height: 300px;
     margin-top: 2.5rem;
+    /* transform: scale(0.89); */
 }
 
 .mac-overlay-container-project {
@@ -543,7 +552,7 @@
 
 .mac-overlay-shadows-project {
     display: flex;
-    width: 300px;
+    width: 365px;
     height: 217px;
     border-radius: 0.85rem;
     -webkit-box-shadow: var(--web-kit-sidebox-shadow);

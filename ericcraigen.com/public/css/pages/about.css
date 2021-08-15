@@ -33,11 +33,32 @@
     width: 100%;
 }
 
+@media screen and (max-width: 1064px) {
+    .about-left {
+        min-width: 40vw;
+    }
+
+    .about-right {
+        max-width: 90vw;
+    }
+}
+
+@media screen and (min-width: 1065px) {
+    .about-left {
+        min-width: 28vw;
+    }
+
+    .about-right {
+        max-width: 68vw;
+    }
+}
+
 .about-left {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* max-width: 40vw; */
     height: 100%;
     margin: 1rem;
     padding: 0.4rem;
@@ -258,7 +279,7 @@
 .about-right {
     display: flex;
     flex-direction: column;
-    width: 67%;
+    /* max-width: 60vw; */
     height: 100%;
     margin: 1rem;
     margin-left: 0.5rem;

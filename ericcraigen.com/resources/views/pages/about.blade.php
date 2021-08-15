@@ -5,7 +5,7 @@ $currentRoute = Route::currentRouteName();
 <x-app-layout>
 
     <div class="about-wrapper">
-        <div class="about-left">
+        <div class="about-left test">
             <div class="about-left-top">
                 <div class="image-wrapper bounce-in-about-load">
                     <img src="/img/header--image.jpg" alt="Eric Craigen" class="about-img">
@@ -194,7 +194,7 @@ $currentRoute = Route::currentRouteName();
 
         </div>
 
-        <div class="about-right">
+        <div class="about-right test">
 
             <div class="about-right-work-history-wrapper">
                 <div class="about-right-header">

@@ -51,6 +51,10 @@
     text-shadow: var(--text-shadow-dark-font-sm);
 }
 
+.home-gifs-container {
+    transform: scale(0.95) !important;
+}
+
 @media (max-width: 767px) {
     .home-gifs-container {
         display: flex;

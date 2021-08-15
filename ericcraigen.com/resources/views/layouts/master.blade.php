@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/components/reset-password-form.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/components/errorToolTip.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/components/home-featured-projects.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/components/adminDashboard.css') }}" />
 
     <link rel="stylesheet" href="{{ URL::asset('css/pages/home.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/pages/about.css') }}" />

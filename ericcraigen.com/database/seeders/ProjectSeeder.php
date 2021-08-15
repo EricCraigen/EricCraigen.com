@@ -161,11 +161,11 @@ class ProjectSeeder extends Seeder
             'subProjectsNameString2' => 'Programming Principles II Course Assignments,Book Main,Character Fight,Check Writer,RegEx Text Search,Various Classes,Word Search Final Project',
             'gitHubRepoURLString' => 'https://github.com/EricCraigen/Console-Applications',
             'contributionsString' => 'Development',
-            'projectDescriptionString' => 'Before the mobile applications could be started, my journey to learning Kotlin began right along side full stack web development with console application. Many of these applications are fairly basic, but provide 
-                                           real world examples of programs that are ready to plugin to an Android application. Some of my more simple programs allow users to convert sentences into an acronymns or to put in a number of coins and be told the 
+            'projectDescriptionString' => 'Before development of mobile applications could be started, my journey to learning Kotlin console programs began right, along side full stack web development with console application. Many of these applications are fairly basic, but provide 
+                                           real world examples of programs that are ready to plugin to an Android application. Some of my more simple programs allow users to convert sentences into acronymns or to put in numbers of coins and be returned the 
                                            vaule of the entered coins.
                                            *My first menu driven application was Rock Paper Scissors. This was really my first deep dive into the world of Object Oriented Programming and was one of the mentally challenging tasks I had ever come against in my 
-                                           life. I can not begin to describe the feeling I had when I was able to finally make it all work as intended and this is really where software develpment took a grip of me so tight that I will never be able to free myself
+                                           life. I can not begin to describe the feeling I had when I was able to finally make it all work as intended and this is really where software develpment took a grip on me so tight; I will never be able to free myself
                                            from its grasp.
                                            *This grasp never felt more suffocating than during the final project in which we were tasked with creating a menu driven Connect Four game. This project required me to utilize a multi-dimensional array to act as a
                                            gameboard that would house the blank and player spaces of the board. 

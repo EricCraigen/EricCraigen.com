@@ -20,7 +20,7 @@ $addAnimationDelay = $cardIndex / 2;
             id="flip-box-front{{ $cardIndex }}">
             <div class="inner front-border">
                 <h3 class="flip-box-header front-card">{{ $projectName }}</h3>
-                <p class="front-card font-1point15rem">{!! html_entity_decode($featuredProjectFrontDescriptionString) !!}</p>
+                <p class="front-card font-1rem">{!! html_entity_decode($featuredProjectFrontDescriptionString) !!}</p>
                 <div class="inner-icons-wrapper">
                     @foreach ($toolTipTitles as $toolTipTitle)
                         @php
@@ -49,7 +49,7 @@ $addAnimationDelay = $cardIndex / 2;
         <div class="flip-box-back" style="background-image: url('{{ $minifiedBackgroundImage }}');"
             id="flip-box-back{{ $cardIndex }}">
             <div class="inner">
-                <p class="back-card font-1point25rem">{!! html_entity_decode($featuredProjectBackDescriptionString) !!}</p>
+                <p class="back-card font-1point15rem">{!! html_entity_decode($featuredProjectBackDescriptionString) !!}</p>
                 <a class="back-card flip-box-button btn btn-primary visit-project-button {{ $cardIndex == 1 || $cardIndex == 2 ? '' : 'd-none' }} gelatine"
                     href="{{ $projectURL }}">
                     {{ $projectName . '.EricCraigen.com' }}
