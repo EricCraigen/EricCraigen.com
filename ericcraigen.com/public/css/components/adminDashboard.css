@@ -14,10 +14,10 @@
     --color-hover: #9acd32 !important;
     --text-shadow-light: -2px 2px 1px black;
     --text-shadow-dark: -2px 2px 1px white;
-    --web-kit-sidebox-shadow: -10px 0px 13px -7px #000000,
-        10px 0px 13px -7px #000000, 5px 5px 11px 14px rgba(0, 0, 0, 0);
-    --side-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-        5px 5px 11px 14px rgba(0, 0, 0, 0);
+    --web-kit-dashboard-shadow: 0px 0px 10px -7px #000000,
+        0px 0px 0px -7px #000000, 0px 0px 0px 14px rgba(0, 0, 0, 0);
+    --dashboard-shadow: 0px 0px 0px 0px #000000, 10px 0px 13px -7px #000000,
+        0px 0px 0px 0px rgba(0, 0, 0, 0);
     --inset-side-box-shadow-light: inset 2px 2px 25px #f5f5f5,
         -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
         5px 5px 11px 14px rgba(0, 0, 0, 0) !important;
@@ -38,10 +38,12 @@
     -ms-user-select: none;
     user-select: none;
     width: 200px;
-    background: #262626;
+    background: #434e5c;
     color: #fff;
     padding: 0;
     margin: 0;
+    -webkit-box-shadow: var(--web-kit-dashboard);
+    box-shadow: var(--dashboard-shadow);
     /* position: fixed;
     left: 0px;
     top: 97px;
