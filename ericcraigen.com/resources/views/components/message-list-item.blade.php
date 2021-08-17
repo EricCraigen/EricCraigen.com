@@ -1,6 +1,7 @@
-@props(['id', 'firstName', 'lastName', 'subject', 'messageDate', 'messageTime'])
+@props(['id', 'firstName', 'lastName', 'subject', 'messageDate', 'messageTime', 'message'])
 
-<div class="message-list-item">
+<div class="message-list-item" data-id="{{ '#message-list-item-' . $id }}" data-index="{{ $id }}"
+    data-message="{{ $message }}">
 
     <div class="message-list-head">
 
@@ -11,7 +12,7 @@
             </div>
 
             <div class="message-subject">
-                <span class="subject">Subject:</span> {!! html_entity_decode(substr($subject, 0, 35)) !!}{{ strlen($subject) > 35 ? '...' : ''}}
+                <span class="subject">Subject:</span> {!! html_entity_decode(substr($subject, 0, 35)) !!}{{ strlen($subject) > 35 ? '...' : '' }}
             </div>
 
         </div>
@@ -34,7 +35,8 @@
 
     <div class="dropdown message-controls">
 
-        <a class="message-controls-toggler" href="#" role="button" id="message-control-dropdown-{{ $id }}" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="message-controls-toggler" href="#" role="button" id="message-control-dropdown-{{ $id }}"
+            data-bs-toggle="dropdown" aria-expanded="false">
             <img src="/img/svg/dots.svg" alt="Message Controls">
         </a>
 
@@ -49,4 +51,3 @@
     </div>
 
 </div>
-

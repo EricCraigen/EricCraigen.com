@@ -16,21 +16,38 @@ $currentRoute = Route::currentRouteName();
         <div class="accordion">
 
             <div class="messages-container" id="inbox">
-
+                @php
+                    $messagesToDisplay = [];
+                @endphp
 
                 <div class="messages-list-wrapper">
 
                     @foreach ($inbox as $message)
-
-                        <x-message-list-item id="{{ $message['id'] }}"
-                                             firstName="{{ $message['firstName'] }}"
-                                             lastName="{{ $message['lastName'] }}"
-                                             subject="{{ $message['subject'] }}"
-                                             messageDate="{{ $message['created_at']->format('F d') }}"
-                                             messageTime="{{ $message['created_at']->format('h:i a') }}"
-                                             />
+                        @php
+                            array_push($messagesToDisplay, $message);
+                        @endphp
+                        <x-message-list-item id="{{ $message['id'] }}" firstName="{{ $message['firstName'] }}"
+                            lastName="{{ $message['lastName'] }}" subject="{{ $message['subject'] }}"
+                            messageDate="{{ $message['created_at']->format('F d') }}"
+                            messageTime="{{ $message['created_at']->format('h:i a') }}"
+                            message="{{ $messagesToDisplay[$loop->index] }}" />
                         {{-- {{ $message_date }} --}}
                     @endforeach
+
+                </div>
+
+                <div class="message-viewer">
+
+                    <div class="message-wrapper">
+
+                        @foreach ($all_messages as $message)
+                            <div class="message-message">
+
+                                {{ $message['message'] }}
+                            </div>
+                        @endforeach
+
+                    </div>
 
                 </div>
 
@@ -91,25 +108,43 @@ $currentRoute = Route::currentRouteName();
 
 
 <script type="text/javascript">
+    // let messagesToDisplay = '"<?php echo json_encode($messagesToDisplay); ?>"';
 
-    function FadeMessageWindow(){
-        $(".messages-container").css("opacity", "0").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend', AddDNoneAfterFade);
+    function FadeMessageWindow() {
+        $(".messages-container").css("opacity", "0").on(
+            'transitionend webkitTransitionEnd oTransitionEnd otransitionend', AddDNoneAfterFade);
     }
 
-    function AddDNoneAfterFade(){
+    function AddDNoneAfterFade() {
         $(".messages-container").css("display", "none");
     }
 
-    function ShowSelectedMessageWindow(messages_container_to_show){
-        $(messages_container_to_show).css("display", "flex").css("opacity", "1").unbind("transitionend webkitTransitionEnd oTransitionEnd otransitionend");
+    function ShowSelectedMessageWindow(messages_container_to_show) {
+        $(messages_container_to_show).css("display", "flex").css("opacity", "1").unbind(
+            "transitionend webkitTransitionEnd oTransitionEnd otransitionend");
     }
 
-    function addActiveTabBgColor(messages_tab){
+    function addActiveTabBgColor(messages_tab) {
         $(messages_tab).css("background", "#2f3640");
+    }
+
+    function FadeCurrentMessage() {
+        $(".message-message").css("opacity", "0").on(
+            'transitionend webkitTransitionEnd oTransitionEnd otransitionend', AddDNoneAfterFadeMessages);
+    }
+
+    function AddDNoneAfterFadeMessages() {
+        $(".message-message").css("display", "none");
+    }
+
+    function ShowSelectedMessage(messageToDisplay) {
+        $(messageToDisplay).css("display", "flex").css("opacity", "1").unbind(
+            "transitionend webkitTransitionEnd oTransitionEnd otransitionend");
     }
 
     // make this a setting...
     ShowSelectedMessageWindow('#inbox');
+    ShowSelectedMessage('#message-list-item-1');
     addActiveTabBgColor('#inbox-li');
 
     $('.messages-link').on('click', function() {
@@ -131,5 +166,22 @@ $currentRoute = Route::currentRouteName();
         }, 500);
 
     });
+    // $(function() {
+
+    $('.message-list-item').on('click', function() {
+        let messageToDisplay = $(this).data('id');
+        alert($(this).data(messageToDisplay));
+        // let currentMessageIndex = $(this).data('index');
+
+        // FadeCurrentMessage();
+        window.setTimeout(function() {
+            ShowSelectedMessage(messageToDisplay);
+            // $('.messages-link').css('pointer-events', 'auto');
+        }, 500);
+
+        // alert($messagesToDisplay);
+        // $('.message-message').html(currentMessage);
+    });
+    // });
 
 </script>
