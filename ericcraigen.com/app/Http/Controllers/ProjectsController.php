@@ -7,9 +7,10 @@ use App\Models\Project;
 
 class ProjectsController extends Controller
 {
-    public function getLandingPad() {
+    public function getLandingPad()
+    {
+        view()->share('title', 'Eric Craigen | My Projects');
         $projects = Project::all();
-        return view("pages.projects.landingPad", compact('projects'), ["title" => "Eric Craigen | My Projects"]);
+        return view("pages.projects", compact('projects'));
     }
 }
-  

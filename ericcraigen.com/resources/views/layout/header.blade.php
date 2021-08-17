@@ -37,9 +37,8 @@ $currentRoute = Route::currentRouteName();
                 </li>
                 @if (Auth::check())
                     <li class="nav-item dropdown">
-                        <a class="nav-link {{ $currentRoute == 'dashboard' ? 'color-hover' : '' }}" href="#"
-                            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div data-bs-toggle="tooltip" title="Account" data-bs-placement="bottom">
+                        <a class="nav-link {{ $currentRoute == 'dashboard' ? 'color-hover' : '' }}" href="{{ Auth::user()->id == 1 ? route('account.dashboard') : route('account.profile') }}">
+                            <div data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="bottom">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-person-lines-fill svg-color-light" viewBox="0 0 16 16">
                                     <path
@@ -47,10 +46,10 @@ $currentRoute = Route::currentRouteName();
                                 </svg>
                             </div>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        {{-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item {{ $currentRoute == 'dashboard' ? 'active' : '' }}"
                                     href="{{ route('account.dashboard') }}">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="{{ route('account.settings') }}">Settings</a></li>
+                            <li><a class="dropdown-item" href="{{ route('account.site-metrics') }}">Settings</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -63,7 +62,7 @@ $currentRoute = Route::currentRouteName();
                                     </x-dropdown-link>
                                 </form>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </li>
                 @else
                     <li class="nav-item gelatine">

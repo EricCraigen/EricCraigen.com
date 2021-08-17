@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(REQUEST $request)
     {
-        // $request->session()->now('status', 'Task was successful');
+        view()->share('title', 'Account Login');
         return view('auth.login');
     }
 
@@ -35,7 +35,7 @@ class AuthenticatedSessionController extends Controller
         $alertType = 'success';
 
         $notification = array(
-            'message' => $message, 
+            'message' => $message,
             'alert-type' => $alertType
         );
 
@@ -62,7 +62,7 @@ class AuthenticatedSessionController extends Controller
         $alertType = 'success';
 
         $notification = array(
-            'message' => $message, 
+            'message' => $message,
             'alert-type' => $alertType
         );
 

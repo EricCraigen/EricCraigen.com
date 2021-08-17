@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>
         @isset($title)
             {{ $title }}
@@ -42,13 +43,16 @@
     <link rel="stylesheet" href="{{ URL::asset('css/components/reset-password-form.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/components/errorToolTip.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/components/home-featured-projects.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/components/adminDashboard.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/components/dashboard-menu.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/components/messages-menu.css') }}" />
 
     <link rel="stylesheet" href="{{ URL::asset('css/pages/home.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/pages/about.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/pages/contact.css') }}" />
 
     <link rel="stylesheet" href="{{ URL::asset('css/pages/projects/landingPad.css') }}" />
+
+    <link rel="stylesheet" href="{{ URL::asset('css/pages/user/messages.css') }}" />
 
     <link rel="stylesheet" href="{{ URL::asset('css/pages/projects/web-dev/landingPad.css') }}" />
 

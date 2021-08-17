@@ -20,6 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
+        view()->share('title', 'Account Registration');
         return view('auth.register');
     }
 
@@ -55,7 +56,7 @@ class RegisteredUserController extends Controller
         $alertType = 'success';
 
         $notification = array(
-            'message' => $message, 
+            'message' => $message,
             'alert-type' => $alertType
         );
 

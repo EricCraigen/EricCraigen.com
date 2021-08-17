@@ -129,12 +129,20 @@ main {
     color: var(--color-light) !important;
 }
 
+.active {
+    color: var(--color-hover) !important;
+}
+
 .color-hover {
     color: var(--color-hover) !important;
 }
 
 .svg-color-light {
     fill: var(--svg-color-light);
+}
+
+.bold {
+    font-weight: 400 !important;
 }
 
 .hidden {

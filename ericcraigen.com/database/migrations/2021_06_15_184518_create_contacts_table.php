@@ -21,6 +21,10 @@ class CreateContactsTable extends Migration
             $table->string('phone');
             $table->string('subject');
             $table->text('message');
+            $table->boolean('messageRead')->nullable()->default(false);
+            $table->boolean('messageStarred')->nullable()->default(false);
+            $table->boolean('messageSnoozed')->nullable()->default(false);
+            $table->boolean('messageTrashed')->nullable()->default(false);
             $table->timestamps();
         });
     }
