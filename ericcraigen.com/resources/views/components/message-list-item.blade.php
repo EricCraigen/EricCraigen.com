@@ -28,8 +28,6 @@
 
         </div>
 
-
-
     </div>
 
     <div class="dropdown message-controls">

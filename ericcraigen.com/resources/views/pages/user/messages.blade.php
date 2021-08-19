@@ -4,7 +4,7 @@ $currentRoute = Route::currentRouteName();
 
 <x-app-layout>
 
-    <div class="dashboard-sidebar test5" id="messages-group">
+    <div class="dashboard-sidebar" id="messages-group">
 
         <x-dashboard-menu />
 
@@ -13,9 +13,9 @@ $currentRoute = Route::currentRouteName();
             <x-messages-menu />
 
         </div>
-        <div class="accordion">
+        <div class="accordion w-100">
 
-            <div class="messages-container test2" id="inbox">
+            <div class="messages-container" id="inbox">
 
 
                 <div class="messages-list-wrapper">
@@ -29,17 +29,51 @@ $currentRoute = Route::currentRouteName();
 
                 </div>
 
-                {{-- <div class="message-viewer test"> --}}
+                <div class="select-message-notification">Please select a message to view (place an image here instead?)</div>
+
+                <div class="message-viewer test5">
 
                         @foreach ($inbox as $message)
-                            <div class="message-message test" id="{{ 'message-message-' . $message['id'] }}">
+                            <div class="message-message" id="{{ 'message-message-' . $message['id'] }}">
+
+                                <div class="message-display-wrapper">
+
+                                    <div class="message-list-head">
+
+                                        <div class="message-list-name-left">
+
+                                            <div class="message-name">
+                                                {{ $message['firstName'] . ' ' . $message['lastName'] }}
+                                            </div>
+
+                                            <div class="message-subject">
+                                                <span class="subject">Subject:</span> {!! html_entity_decode(substr($message['subject'], 0, 35)) !!}{{ strlen($message['subject']) > 35 ? '...' : '' }}
+                                            </div>
+
+                                        </div>
+
+                                        <div class="message-list-info">
+
+                                            <div class="message-date">
+                                                {{ $message['messageDate'] }}
+                                            </div>
+
+                                            <div class="message-time">
+                                                {{ $message['messageTime'] }}
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
 
                                 {{ $message['message'] }}
 
                             </div>
                         @endforeach
 
-                {{-- </div> --}}
+                </div>
 
             </div>
 
@@ -49,7 +83,13 @@ $currentRoute = Route::currentRouteName();
 
                     <div class="message-message" id="{{ 'message-message-' . $message['id'] }}">
 
-                        {{ $message['message'] }}
+
+
+                            {{ $message['message'] }}
+
+                        </div>
+
+
                     </div>
 
                 </div>
@@ -188,13 +228,48 @@ $currentRoute = Route::currentRouteName();
     });
 
     $('.message-list-item').on('click', function() {
-        let messageToDisplay = $(this).data('id');
+        // alert($(this).hasClass('message-list-item'));
 
-        FadeCurrentMessage();
-        window.setTimeout(function() {
-            ShowSelectedMessage(messageToDisplay);
-        }, 500);
+        // if($(this).hasClass('message-controls-toggler')) {
+            $('.message-list-item').on('click', function() {
+
+                let messageToDisplay = $(this).data('id');
+
+                FadeCurrentMessage();
+                window.setTimeout(function() {
+                    ShowSelectedMessage(messageToDisplay);
+                }, 500);
+
+            });
+        // }
+
+    //     let messageToDisplay = $(this).data('id');
+
+    //     FadeCurrentMessage();
+    //     window.setTimeout(function() {
+    //         ShowSelectedMessage(messageToDisplay);
+    //     }, 500);
 
     });
+
+    $(".dropdown").hover(function(){
+        var dropdownMenu = $(this).children(".dropdown-menu");
+        if(dropdownMenu.is(":visible")){
+            dropdownMenu.parent().toggleClass("open");
+        }
+    });
+
+    // $('.message-controls-toggler').on('mouseover', function() {
+
+    //     var dropdownMenu = $(this).children(".dropdown-menu");
+    //         if(dropdownMenu.is(":visible")){
+    //             dropdownMenu.parent().toggleClass("open");
+    //         }
+
+
+    // //     // $('.message-list-item').css('pointer-events', 'none');
+    // //     // $('.message-controls-toggler').css('pointer-events', 'auto');
+
+    // });
 
 </script>
