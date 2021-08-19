@@ -4,7 +4,7 @@ $currentRoute = Route::currentRouteName();
 
 <x-app-layout>
 
-    <div class="dashboard-sidebar" id="messages-group">
+    <div class="dashboard-sidebar test5" id="messages-group">
 
         <x-dashboard-menu />
 
@@ -15,42 +15,31 @@ $currentRoute = Route::currentRouteName();
         </div>
         <div class="accordion">
 
-            <div class="messages-container" id="inbox">
-                @php
-                    $messagesToDisplay = [];
-                @endphp
+            <div class="messages-container test2" id="inbox">
+
 
                 <div class="messages-list-wrapper">
 
                     @foreach ($inbox as $message)
-                        @php
-                            array_push($messagesToDisplay, $message);
-                        @endphp
                         <x-message-list-item id="{{ $message['id'] }}" firstName="{{ $message['firstName'] }}"
                             lastName="{{ $message['lastName'] }}" subject="{{ $message['subject'] }}"
                             messageDate="{{ $message['created_at']->format('F d') }}"
-                            messageTime="{{ $message['created_at']->format('h:i a') }}"
-                            message="{{ $messagesToDisplay[$loop->index] }}" />
-                        {{-- {{ $message_date }} --}}
+                            messageTime="{{ $message['created_at']->format('h:i a') }}"/>
                     @endforeach
 
                 </div>
 
-                <div class="message-viewer">
+                {{-- <div class="message-viewer test"> --}}
 
-                    <div class="message-wrapper">
-
-                        @foreach ($all_messages as $message)
-                            <div class="message-message">
+                        @foreach ($inbox as $message)
+                            <div class="message-message test" id="{{ 'message-message-' . $message['id'] }}">
 
                                 {{ $message['message'] }}
+
                             </div>
                         @endforeach
 
-                    </div>
-
-                </div>
-
+                {{-- </div> --}}
 
             </div>
 
@@ -58,7 +47,10 @@ $currentRoute = Route::currentRouteName();
 
                 <div class="messages-list-wrapper">
 
-                    Sent component
+                    <div class="message-message" id="{{ 'message-message-' . $message['id'] }}">
+
+                        {{ $message['message'] }}
+                    </div>
 
                 </div>
 
@@ -69,7 +61,10 @@ $currentRoute = Route::currentRouteName();
                 <div class="messages-list-wrapper">
 
                     @foreach ($starred as $message)
-                        {{ $message['id'] }}
+                        <x-message-list-item id="{{ $message['id'] }}" firstName="{{ $message['firstName'] }}"
+                            lastName="{{ $message['lastName'] }}" subject="{{ $message['subject'] }}"
+                            messageDate="{{ $message['created_at']->format('F d') }}"
+                            messageTime="{{ $message['created_at']->format('h:i a') }}"/>
                     @endforeach
 
                 </div>
@@ -81,7 +76,10 @@ $currentRoute = Route::currentRouteName();
                 <div class="messages-list-wrapper">
 
                     @foreach ($snoozed as $message)
-                        {{ $message['id'] }}
+                        <x-message-list-item id="{{ $message['id'] }}" firstName="{{ $message['firstName'] }}"
+                            lastName="{{ $message['lastName'] }}" subject="{{ $message['subject'] }}"
+                            messageDate="{{ $message['created_at']->format('F d') }}"
+                            messageTime="{{ $message['created_at']->format('h:i a') }}"/>
                     @endforeach
 
                 </div>
@@ -93,7 +91,10 @@ $currentRoute = Route::currentRouteName();
                 <div class="messages-list-wrapper">
 
                     @foreach ($trashed as $message)
-                        {{ $message['id'] }}
+                        <x-message-list-item id="{{ $message['id'] }}" firstName="{{ $message['firstName'] }}"
+                            lastName="{{ $message['lastName'] }}" subject="{{ $message['subject'] }}"
+                            messageDate="{{ $message['created_at']->format('F d') }}"
+                            messageTime="{{ $message['created_at']->format('h:i a') }}"/>
                     @endforeach
 
                 </div>
@@ -108,7 +109,6 @@ $currentRoute = Route::currentRouteName();
 
 
 <script type="text/javascript">
-    // let messagesToDisplay = '"<?php echo json_encode($messagesToDisplay); ?>"';
 
     function FadeMessageWindow() {
         $(".messages-container").css("opacity", "0").on(
@@ -125,7 +125,7 @@ $currentRoute = Route::currentRouteName();
     }
 
     function addActiveTabBgColor(messages_tab) {
-        $(messages_tab).css("background", "#2f3640");
+        $(messages_tab).css("background", "#434e5c");
     }
 
     function FadeCurrentMessage() {
@@ -144,20 +144,40 @@ $currentRoute = Route::currentRouteName();
 
     // make this a setting...
     ShowSelectedMessageWindow('#inbox');
-    ShowSelectedMessage('#message-list-item-1');
+    ShowSelectedMessage('#message-message-1');
     addActiveTabBgColor('#inbox-li');
 
     $('.messages-link').on('click', function() {
         let messages_container_to_show = $(this).data('message-link');
         let messages_tab = $(this).data('message-link') + '-li';
-
         $('.messages-link').css('pointer-events', 'none');
         $('.messages-link').removeClass('active');
-        $('.messages-menu-li').css('background', '#434e5c');
+        $('.messages-menu-li').css('background', '#2f3640');
+
+        switch (messages_tab) {
+            case '#inbox-li':
+                $('#messages-menu-list').css('padding-top', '234px');
+            break;
+            case '#sent-li':
+                $('#messages-menu-list').css('padding-top', '188px');
+            break;
+            case '#starred-li':
+                $('#messages-menu-list').css('padding-top', '142px');
+            break;
+            case '#snoozed-li':
+                $('#messages-menu-list').css('padding-top', '96px');
+            break;
+            case '#trashed-li':
+                $('#messages-menu-list').css('padding-top', '50px');
+            break;
+
+            default:
+                console.log('in default...');
+
+        }
 
         $(this).addClass('active');
         addActiveTabBgColor(messages_tab);
-        // $(messages_tab).css('background', '#2f3640');
 
         FadeMessageWindow();
         window.setTimeout(function() {
@@ -166,22 +186,15 @@ $currentRoute = Route::currentRouteName();
         }, 500);
 
     });
-    // $(function() {
 
     $('.message-list-item').on('click', function() {
         let messageToDisplay = $(this).data('id');
-        alert($(this).data(messageToDisplay));
-        // let currentMessageIndex = $(this).data('index');
 
-        // FadeCurrentMessage();
+        FadeCurrentMessage();
         window.setTimeout(function() {
             ShowSelectedMessage(messageToDisplay);
-            // $('.messages-link').css('pointer-events', 'auto');
         }, 500);
 
-        // alert($messagesToDisplay);
-        // $('.message-message').html(currentMessage);
     });
-    // });
 
 </script>

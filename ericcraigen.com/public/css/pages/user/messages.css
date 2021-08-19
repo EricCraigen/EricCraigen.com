@@ -2,24 +2,44 @@
     display: flex;
 }
 
+.accordian {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .messages-container {
     display: flex;
     opacity: 0;
     display: none;
-    max-width: calc(100vw - 200px - 400px);
+    width: 100%;
+    /* flex-basis: auto; */
     height: 100%;
     transition: opacity 0.5s linear;
     -webkit-transition: opacity 0.5s linear;
     -moz-transition: opacity 0.5s linear;
     -o-transition: opacity 0.5s linear;
     -ms-transition: opacity 0.5s linear;
+    overflow: hidden;
+}
+
+.message-viewer {
+    display: flex;
+    /* width: 100%; */
+    width: 100%;
+    /* background-color: tomato !important; */
+    overflow: hidden;
 }
 
 .message-message {
-    display: flex;
+    float: right;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* width: 100%; */
     opacity: 0;
     display: none;
-    /* max-width: calc(100vw - 200px - 400px); */
+    width: calc(100vw - 200px - 400px);
     height: 100%;
     transition: opacity 0.5s linear;
     -webkit-transition: opacity 0.5s linear;
@@ -41,19 +61,25 @@
     flex-direction: column;
     width: 400px;
     /* padding: 1rem; */
-    background: #2f3640;
+    background: #434e5c;
     height: 100%;
+    -webkit-box-shadow: var(--web-kit-dashboard);
+    box-shadow: var(--dashboard-shadow);
 }
 
 .message-list-item {
     display: flex;
-    width: calc(100% - 1rem);
+    width: calc(100% - 1.5rem);
     height: 75px;
-    background-color: #434e5c;
-    padding: 0.25rem;
-    margin: 0.5rem;
+    background-color: #2f3640;
+    padding: 0.5rem;
+    margin: 0.75rem;
     margin-bottom: calc(0.5rem / 2);
     border-radius: 0.35rem;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4),
+        -0px -0px 5px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4),
+        -0px -0px 5px 1px rgba(0, 0, 0, 0.4);
 }
 
 .message-list-item:hover {
@@ -144,6 +170,20 @@
 
 .message-controls > ul {
     background-color: #434e5c !important;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4),
+        -0px -0px 5px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4),
+        -0px -0px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
+.message-controls > ul > li > a {
+    color: var(--color-light) !important;
+}
+
+.message-controls > ul > li > a:hover {
+    color: var(--color-hover) !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
 }
 
 .message-wrapper {

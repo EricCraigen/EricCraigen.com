@@ -1,7 +1,6 @@
-@props(['id', 'firstName', 'lastName', 'subject', 'messageDate', 'messageTime', 'message'])
+@props(['id', 'firstName', 'lastName', 'subject', 'messageDate', 'messageTime'])
 
-<div class="message-list-item" data-id="{{ '#message-list-item-' . $id }}" data-index="{{ $id }}"
-    data-message="{{ $message }}">
+<div class="message-list-item" data-id="{{ '#message-message-' . $id }}" data-index="{{ $id }}">
 
     <div class="message-list-head">
 

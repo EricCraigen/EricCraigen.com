@@ -1,8 +1,8 @@
 <div class="messages-menu">
 
-        <h2 class="color-light">Messages</h2>
+        {{-- <h2 class="color-light">Messages</h2> --}}
 
-        <ul>
+        <ul id="messages-menu-list">
 
             <li class="messages-menu-li" id="inbox-li"><a id="messages-inbox" class="messages-link active" data-message-link="#inbox" href="#inbox">Inbox</a></li>
             <li class="messages-menu-li" id="sent-li"><a id="messages-sent" class="messages-link" data-message-link="#sent" href="#sent">Sent</a></li>
