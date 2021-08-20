@@ -20,7 +20,7 @@ $currentRoute = Route::currentRouteName();
 
         {{-- {{ $allMessages }} --}}
 
-        <x-messages-list allMessages="{!! $allMessages !!}"  />
+        <x-messages-list allMessages="{!! json_encode($allMessages) !!}" inbox="{!! $inbox !!}" />
 
 
 
@@ -168,7 +168,6 @@ $currentRoute = Route::currentRouteName();
 
 
 <script type="text/javascript">
-
     function FadeMessageWindow() {
         $(".messages-container").css("opacity", "0").on(
             'transitionend webkitTransitionEnd oTransitionEnd otransitionend', AddDNoneAfterFade);
@@ -216,19 +215,19 @@ $currentRoute = Route::currentRouteName();
         switch (messages_tab) {
             case '#inbox-li':
                 $('#messages-menu-list').css('padding-top', '234px');
-            break;
+                break;
             case '#sent-li':
                 $('#messages-menu-list').css('padding-top', '188px');
-            break;
+                break;
             case '#starred-li':
                 $('#messages-menu-list').css('padding-top', '142px');
-            break;
+                break;
             case '#snoozed-li':
                 $('#messages-menu-list').css('padding-top', '96px');
-            break;
+                break;
             case '#trashed-li':
                 $('#messages-menu-list').css('padding-top', '50px');
-            break;
+                break;
 
             default:
                 console.log('in default...');
@@ -250,24 +249,24 @@ $currentRoute = Route::currentRouteName();
         // alert($(this).hasClass('message-list-item'));
 
         // if($(this).hasClass('message-controls-toggler')) {
-            $('.message-list-item').on('click', function() {
+        $('.message-list-item').on('click', function() {
 
-                let messageToDisplay = $(this).data('id');
+            let messageToDisplay = $(this).data('id');
 
-                FadeCurrentMessage();
-                window.setTimeout(function() {
-                    ShowSelectedMessage(messageToDisplay);
-                }, 500);
+            FadeCurrentMessage();
+            window.setTimeout(function() {
+                ShowSelectedMessage(messageToDisplay);
+            }, 500);
 
-            });
+        });
         // }
 
-    //     let messageToDisplay = $(this).data('id');
+        //     let messageToDisplay = $(this).data('id');
 
-    //     FadeCurrentMessage();
-    //     window.setTimeout(function() {
-    //         ShowSelectedMessage(messageToDisplay);
-    //     }, 500);
+        //     FadeCurrentMessage();
+        //     window.setTimeout(function() {
+        //         ShowSelectedMessage(messageToDisplay);
+        //     }, 500);
 
     });
 
