@@ -35,14 +35,14 @@ class UserAccountController extends Controller
 
     public function getContactMessages()
     {
-        $all_messages = Contact::all();
+        $allMessages = Contact::all();
         $inbox = Contact::where('messageStarred', false)->where('messageSnoozed', false)->where('messageTrashed', false)->get();
         $starred = Contact::where('messageStarred', true)->get();
         $snoozed = Contact::where('messageSnoozed', true)->get();
         $trashed = Contact::where('messageTrashed', true)->get();
 
         view()->share('title', 'Eric Craigen | Message Inbox');
-        return view("pages.user.messages", compact('all_messages', 'inbox', 'starred', 'snoozed', 'trashed',));
+        return view("pages.user.messages", compact('allMessages', 'inbox', 'starred', 'snoozed', 'trashed',));
     }
 
     public function getSettings()

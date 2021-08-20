@@ -8,12 +8,31 @@ $currentRoute = Route::currentRouteName();
 
         <x-dashboard-menu />
 
-        <div class="messages-menu-wrapper">
+        {{-- <div class="messages-menu-wrapper"> --}}
 
-            <x-messages-menu />
+        <x-messages-menu />
 
-        </div>
-        <div class="accordion w-100">
+        {{-- </div> --}}
+
+        {{-- @php
+            json_encode($allMessages);
+        @endphp --}}
+
+        {{-- {{ $allMessages }} --}}
+
+        <x-messages-list allMessages="{!! $allMessages !!}"  />
+
+
+
+
+
+
+
+
+
+
+
+        {{-- <div class="accordion w-100">
 
             <div class="messages-container" id="inbox">
 
@@ -65,7 +84,7 @@ $currentRoute = Route::currentRouteName();
                                         </div>
 
                                     </div>
-                                    
+
                                 </div>
 
                                 {{ $message['message'] }}
@@ -141,7 +160,7 @@ $currentRoute = Route::currentRouteName();
 
             </div>
 
-        </div>
+        </div> --}}
 
     </div>
 
@@ -252,12 +271,12 @@ $currentRoute = Route::currentRouteName();
 
     });
 
-    $(".dropdown").hover(function(){
-        var dropdownMenu = $(this).children(".dropdown-menu");
-        if(dropdownMenu.is(":visible")){
-            dropdownMenu.parent().toggleClass("open");
-        }
-    });
+    // $(".dropdown").hover(function(){
+    //     var dropdownMenu = $(this).children(".dropdown-menu");
+    //     if(dropdownMenu.is(":visible")){
+    //         dropdownMenu.parent().toggleClass("open");
+    //     }
+    // });
 
     // $('.message-controls-toggler').on('mouseover', function() {
 

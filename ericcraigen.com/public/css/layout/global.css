@@ -87,6 +87,10 @@
     white-space: nowrap;
 }
 
+/* #addon-wrapping {
+    background: transparent !important;
+} */
+
 * {
     color: var(--color-dark);
     font-family: var(--font-family);
