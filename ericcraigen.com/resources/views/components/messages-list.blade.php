@@ -34,12 +34,12 @@
             $trashed = array();
         @endphp --}}
 
-        {{-- @foreach (json_decode($inbox) as $message) --}}
+        @foreach (json_encode($inbox) as $message)
         @php
-            $messageRecord = json_decode($inbox, true);
+            $messageRecord = $inbox;
         @endphp
 
-        {!! $messageRecord !!}
+        {!! $messageRecord[1] !!}
         {{-- {{ $messageRecord }} --}}
 
         {{-- {{ json_encode($messageRecord) }} --}}
