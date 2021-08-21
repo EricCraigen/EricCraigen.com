@@ -18,9 +18,9 @@ $currentRoute = Route::currentRouteName();
             json_encode($allMessages);
         @endphp --}}
 
-        {{-- {{ $allMessages }} --}}
+        {{-- {{ $inbox }} --}}
 
-        <x-messages-list allMessages="{!! json_encode($allMessages) !!}" inbox="{!! $inbox !!}" />
+        <x-messages-list allMessages="{!! json_encode($allMessages) !!}" inbox="{!! json_encode($inbox) !!}" />
 
 
 

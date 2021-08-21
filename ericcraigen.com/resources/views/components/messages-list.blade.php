@@ -33,24 +33,29 @@
             $snoozed = array();
             $trashed = array();
         @endphp --}}
+        {{-- {!! $inbox !!} --}}
 
-        @foreach (json_encode($inbox) as $message)
-        @php
-            $messageRecord = $inbox;
-        @endphp
+        @foreach (json_decode($inbox) as $message)
 
-        {!! $messageRecord[1] !!}
-        {{-- {{ $messageRecord }} --}}
+            {!! $message->id !!}
+            {{-- @php
+                $messageRecord = $message;
+            @endphp
 
-        {{-- {{ json_encode($messageRecord) }} --}}
+            
 
-        {{-- <x-message messageRecord={{ $message }} /> --}}
+            {!! $messageRecord !!} --}}
+            {{-- {{ $messageRecord }} --}}
 
-        {{-- @if (($message->messageStarred == false || $message->messageStarred == null) && ($message->messageSnoozed == false || $message->messageSnoozed == null) && ($message->messageTrashed == false || $message->messageTrashed == null))
+            {{-- {{ json_encode($messageRecord) }} --}}
+
+            {{-- <x-message messageRecord={{ $message }} /> --}}
+
+            {{-- @if (($message->messageStarred == false || $message->messageStarred == null) && ($message->messageSnoozed == false || $message->messageSnoozed == null) && ($message->messageTrashed == false || $message->messageTrashed == null))
 
 
         @endif --}}
-        {{-- @if (($message->messageStarred == false || $message->messageStarred == null) && ($message->messageSnoozed == false || $message->messageSnoozed == null) && ($message->messageTrashed == false || $message->messageTrashed == null))
+            {{-- @if (($message->messageStarred == false || $message->messageStarred == null) && ($message->messageSnoozed == false || $message->messageSnoozed == null) && ($message->messageTrashed == false || $message->messageTrashed == null))
             @php
                 array_push($inbox, $message);
             @endphp
@@ -61,8 +66,8 @@
 
 
 
-        {{-- {{ $message->id }}<br /> --}}
-        {{-- @endforeach --}}
+            {{-- {{ $message->id }}<br /> --}}
+        @endforeach
         {{-- {{ json_decode($inbox)->count() }} --}}
         {{-- {{ $inbox[13]->id }} --}}
     </div>
