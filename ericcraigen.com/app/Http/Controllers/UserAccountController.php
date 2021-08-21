@@ -36,7 +36,7 @@ class UserAccountController extends Controller
     public function getContactMessages()
     {
         $allMessages = Contact::all();
-        $inbox = Contact::where('messageStarred', false || null)->where('messageSnoozed', false || null)->where('messageTrashed', false || null)->get();
+        $inbox = Contact::where('messageTrashed', false || null)->get();
         $starred = Contact::where('messageStarred', true)->get();
         $snoozed = Contact::where('messageSnoozed', true)->get();
         $trashed = Contact::where('messageTrashed', true)->get();

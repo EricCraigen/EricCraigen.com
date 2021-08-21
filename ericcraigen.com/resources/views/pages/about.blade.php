@@ -194,7 +194,7 @@ $currentRoute = Route::currentRouteName();
 
         </div>
 
-        <div class="about-right test">
+        <div class="about-right">
 
             <div class="about-right-work-history-wrapper">
                 <div class="about-right-header">
