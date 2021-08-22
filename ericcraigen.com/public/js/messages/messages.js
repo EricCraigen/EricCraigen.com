@@ -1,12 +1,18 @@
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
 // Settings here???
 $(document).ready(function() {
     let active_mailbox = '#inbox';
     let active_mailbox_tab = '#inbox-li';
     $(active_mailbox_tab).css("background", "#434e5c");
     loadPreferredMailbox(active_mailbox, active_mailbox_tab);
-    // window.setTimeout(function() {
-        displayEmptySelectedMessageWindow();
-    // }, 1200);
+
+    window.setTimeout(function() {
+        $('.selected-message-animation-window').removeClass('d-none');
+        // displaySelectedMessageAnimationWindow();
+    }, 1200);
 });
 
 function loadPreferredMailbox(_active_mailbox, _active_mailbox_tab) {
@@ -79,52 +85,69 @@ function switchActiveMailbox(_active_mailbox, _active_mailbox_tab) {
     }
 }
 
-function displayEmptySelectedMessageWindow() {
-    let loading_gif = document.createElement('div');
-    loading_gif.classList.add('selected-message-loader');
-    document.querySelector('.selected-message-animation-window').appendChild(loading_gif);
-    for (let loaderInners = 0; loaderInners < 3; loaderInners++) {
-        let loaderInner = document.createElement('div');
-        loaderInner.classList.add('inner');
-        loaderInner.classList.add(loaderInners + 1 == 3 ? 'three' : loaderInners + 1 == 1 ? 'one' : 'two');
-        document.querySelector('.selected-message-loader').appendChild(loaderInner);
-    }
+function displaySelectedMessageAnimationWindow(obj) {
+    $('.selected-message-animation-window').addClass('d-none').css('left', '0px');
+    window.setTimeout(function() {
+        $('.selected-message-animation-window').removeClass('d-none');
+        toggleActiveSelectedMessageThumb($(obj));
+        $('.selected-message-animation-window').css('opacity', 1);
+    }, 1200);
 }
 
-    function displayEmptySelectedMessageWindowLog(obj) {
+    function displaySelectedMessageAnimationWindowLog(obj) {
         let _message = $(obj);
         console.log(_message);
     }
 
-function removeEmptySelectedMessageWindow() {
-    $('.selected-message-animation-window').css('left', 'calc(100% - 623px)');
+function removeSelectedMessageAnimationWindow() {
+    $('.selected-message-animation-window').css('opacity', 0);
+    window.setTimeout(function() {
+        $('.selected-message-animation-window').addClass('d-none');
+        $('.selected-message-animation-window').css('left', 'calc(100% - 623px)');
+    }, 1200);
 }
 
 function toggleActiveSelectedMessageThumb(obj) {
-    let clicked_message_thumb = $(obj);
-    console.log(clicked_message_thumb);
+    // let clicked_message_thumb = $(obj);
+    // window.setTimeout(function() {
+        $(obj).addClass('active-message-thumb');
+    // }, 2050);
+    console.log($(obj));
 }
 
-function getSelectedMessageContent(obj) {
+function setSelectedMessageContent(obj) {
+    window.setTimeout(function() {
+        $('.populated-message-window').removeClass('d-none');
+    }, 2050);
     let clicked_message_content = $(obj).data('message');
+    $('.message-from').text(clicked_message_content.firstName + ' ' + clicked_message_content.lastName);
+    $('.subject').text(clicked_message_content.subject);
+    let date = new Date(clicked_message_content.created_at);
+    let  [month, day, [hours, minutes, seconds]] = [date.getMonth(), date.getDate(), [date.getHours(), date.getMinutes(), date.getSeconds()]];
+    $('.message-date').text(monthNames[month] + ' ' + day);
+    $('.message-time').text(hours + ':' + minutes);
+    $('.message-message').text(clicked_message_content.message);
     console.log(clicked_message_content);
 }
 
 $('.messages-link').on('click', function() {
-
     let active_mailbox = '' + $(this).data('mailbox-getter');
     let active_mailbox_tab = $(this).data('mailbox-getter') + '-li';
     toggleMessageLoading();
     toggleActiveMailboxTab(active_mailbox_tab, $(this));
     switchActiveMailbox(active_mailbox, active_mailbox_tab);
-
 });
 
-$('.message').on('click', function(obj) {
-    removeEmptySelectedMessageWindow();
-    toggleActiveSelectedMessageThumb($(this));
-    getSelectedMessageContent($(this));
+$('.message-thumb').on('click', function() {
+    $('.populated-message-window').addClass('d-none');
+    $('.message-thumb').removeClass('active-message-thumb');
+    // toggleActiveSelectedMessageThumb($(this));
+    setSelectedMessageContent($(this));
+    displaySelectedMessageAnimationWindow($(this));
 
+    window.setTimeout(function() {
+        removeSelectedMessageAnimationWindow();
+    }, 1200);
 });
 
 $('.menu').on('mouseover', function() {

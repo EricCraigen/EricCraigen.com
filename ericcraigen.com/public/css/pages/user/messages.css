@@ -64,10 +64,45 @@
     /* height: 75px; */
 }
 
+.message-thumb {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    top: 0;
+    /* bottom: 0;
+    right: 0; */
+    left: 0;
+    background-image: linear-gradient(
+        to top left,
+        rgba(15, 216, 80, 0.3) 0%,
+        rgba(249, 240, 71, 0.3) 100%
+    );
+    border-radius: 0.35rem;
+}
+
+.message-thumb:hover {
+    background-image: linear-gradient(
+        to top left,
+        rgba(15, 216, 80, 0.5) 0%,
+        rgba(249, 240, 71, 0.5) 100%
+    );
+}
+
+.active-message-thumb {
+    background-image: linear-gradient(
+        to top left,
+        rgba(15, 216, 80, 0.5) 0%,
+        rgba(249, 240, 71, 0.5) 100%
+    ) !important;
+}
+
 .message {
     position: relative;
     display: flex;
-    background: #2f3640;
+    background: #434e5c;
     border-radius: 0.35rem;
     margin-bottom: 1rem;
     height: 75px;
@@ -79,13 +114,53 @@
 }
 
 .message-content {
-    display: grid;
-    grid-template-columns: 15% fit-content();
-    padding: 0.5rem 0rem 0.5rem 0rem;
+    display: flex;
+    /* grid-template-columns: 15% fit-content(); */
+    /* padding: 0.5rem 0rem 0.5rem 0rem; */
+    padding: 0.5rem;
 }
 
-#selected-message {
-    background-color: #2f3640;
+.message-thumb-header {
+    display: flex;
+    width: 100%;
+    height: calc(75px - 1rem);
+}
+
+.message-thumb-header-left {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.message-thumb-from {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.message-thumb-subject {
+    font-size: 0.8rem;
+}
+
+.message-thumb-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 20%;
+}
+
+.message-thumb-date {
+    font-size: 0.7rem;
+}
+
+.message-thumb-time {
+    font-size: 0.6rem;
+}
+
+.message-thumb-commands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
 }
 
 .selected-message {
@@ -96,6 +171,7 @@
     left: 623px;
     display: flex;
     width: 100%;
+    background-color: #2f3640;
     /* height: 100%; */
     /* background: red !important; */
     z-index: 0;
@@ -122,6 +198,10 @@
     overflow-y: hidden;
 } */
 
+.populated-message-window * {
+    color: white;
+}
+
 .populated-message-window {
     position: absolute;
     top: 0;
@@ -133,7 +213,59 @@
     /* align-items: center; */
     min-width: calc(100% - 623px);
     height: 80vh;
+    padding: 1.5rem;
     overflow-y: hidden;
+}
+
+.selected-message-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: min-content;
+    background-color: #434e5c;
+    border-radius: 0.35rem;
+    padding: 1.25rem;
+}
+
+.message-header {
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+    /* flex-direction: column; */
+}
+
+.message-header-left {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.message-from {
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.message-subject {
+    display: flex;
+    font-size: 1.1rem;
+}
+
+.message-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 10%;
+}
+
+.message-date,
+.message-time {
+    font-size: 1rem;
+}
+
+.message-message {
+    display: flex;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
 }
 
 .selected-message-animation-window {
@@ -147,7 +279,8 @@
     align-items: center;
     min-width: calc(100% - 623px);
     height: 80vh;
-    transition: left 0.5s;
+    opacity: 0;
+    transition: all 1.2s;
 }
 
 /* Animations */
