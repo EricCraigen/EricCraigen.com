@@ -121,6 +121,7 @@ body::-webkit-scrollbar {
 }
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
 }

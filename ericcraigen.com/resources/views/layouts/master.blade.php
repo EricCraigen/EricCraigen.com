@@ -54,9 +54,9 @@
 
     <link rel="stylesheet" href="{{ URL::asset('css/pages/user/messages.css') }}" />
 
-    <link rel="stylesheet" href="{{ URL::asset('css/pages/projects/web-dev/landingPad.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ URL::asset('css/pages/projects/web-dev/landingPad.css') }}" /> --}}
 
-    <link rel="stylesheet" href="{{ URL::asset('css/pages/projects/mob-dev/landingPad.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ URL::asset('css/pages/projects/mob-dev/landingPad.css') }}" /> --}}
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -171,7 +171,7 @@
                 let mainScrollUpIndicatorLocation = 140 + bodyScrollPos;
                 let mainScrollDownIndicatorLocation = 40 + scrollToBottom;
                 currentBodyScrollPos = bodyScrollPos;
-                console.log(bodyScrollPos + ", " + scrollToBottom);
+                // console.log(bodyScrollPos + ", " + scrollToBottom);
 
                 $('#mainScrollUpIndicator1').css('top', mainScrollUpIndicatorLocation);
                 if (scrollToBottom >= 179) {

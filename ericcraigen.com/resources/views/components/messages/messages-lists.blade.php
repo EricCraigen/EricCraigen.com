@@ -30,11 +30,16 @@
 
                 <div class="messages-list">
 
+                    @php
+                        $inbox_array = json_decode($inbox, true);
+                        // var_dump($inbox_array[0]['id']);
+                    @endphp
+
                     @foreach (json_decode($inbox) as $message)
 
                         <x-messages.message>
 
-                            <div class="message" id="{{ 'message-' . $message->id }}">
+                            <div class="message" id="{{ 'message-' . $message->id }}" data-message="{{ json_encode($inbox_array[$loop->index]) }}">
 
                                 <div class="loading" id="{{ 'loading-' . $message->id }}">
                                     <div></div>
@@ -42,7 +47,7 @@
                                     <div></div>
                                 </div>
 
-                                <div class="message-content test d-none" id="{{ 'message-content-' . $message->id }}">
+                                <div class="message-content d-none" id="{{ 'message-content-' . $message->id }}">
 
                                     <div class="message-name">
                                         {!! $message->firstName . ' ' . $message->lastName !!}
@@ -58,6 +63,8 @@
 
                 </div>
 
+
+
             </div>
 
         </x-selected-mailbox>
@@ -72,11 +79,16 @@
 
                 <div class="messages-list">
 
+                    @php
+                        $starred_array = json_decode($starred, true);
+                        // var_dump($starred_array[0]['id']);
+                    @endphp
+
                     @foreach (json_decode($starred) as $message)
 
                         <x-messages.message>
 
-                            <div class="message">
+                            <div class="message" id="{{ 'message-' . $message->id }}" data-message="{{ json_encode($starred_array[$loop->index]) }}">
 
                                 {{-- Animations (css) --}}
                                 <div class="loading" id="{{ 'loading-' . $message->id }}">
@@ -86,7 +98,11 @@
                                 </div>
 
                                 <div class="message-content d-none" id="{{ 'message-content-' . $message->id }}">
-                                    {!! $message->firstName . ' ' !!}
+
+                                    <div class="message-name">
+                                        {!! $message->firstName . ' ' . $message->lastName !!}
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -101,6 +117,10 @@
 
         </x-selected-mailbox>
 
+
+
+
     </div>
+
 
 </div>
